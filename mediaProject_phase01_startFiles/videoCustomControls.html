@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Simple Video - Needlegun 1866</title>
+	<meta charset="utf-8">
+
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body onload="initializePlayer()">
+
+	<div id="wrapper">
+		<h2>Simple Video - Needlegun 1866</h2>
+		
+		<!--<video autoplay loop controls>-->
+		<!-- note: using just width (no height) controls bar stays pinned correctly -->
+		<video width="800px" controls poster="images/stPrivat.jpg" preload="metadata">
+			<source src="../media/Needlegun.webm">
+			<source src="../media/Needlegun.mp4">
+		</video>
+		
+		<!-- Define the controls -->
+		<div id="controls">
+			<div id="progressBar"><span id="played"></span></div>
+			
+			<button id="playpause" alt="play" title="play" onclick="togglePlay()">play</button>
+			
+			<button id="stop" alt="stop" title="stop" onclick="stopVideo()">stop</button>
+			
+			<button id="slowMo" alt="slowMo" title="slowMo" onclick="changePlaybackSpeed('-');" >&laquo;</button>
+			
+			<button id="speedUp" alt="speed up" title="speed up" onclick="changePlaybackSpeed('+');" >&raquo;</button>
+			
+			<button id="volumeDown" alt="decrease volume" title="-" onclick="changeVolume('-')">-</button>
+			
+			<button id="volumeUp" alt="increase volume" title="+" onclick="changeVolume('+')">+</button>
+			
+			<button id="mute" alt="mute" title="mute" onclick="toggleMute()">mute</button>
+		</div>
+		
+		<audio controls>
+			<source src="../media/Explode.mp3">
+		</audio>
+	</div>
+	
+	<script src="js/controls.js"></script>
+
+</body>
+</html>

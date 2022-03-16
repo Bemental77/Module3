@@ -1,0 +1,59 @@
+body {
+	background-color: #333;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+/*
+video {
+	margin: 20px;
+	border-radius: 20px;
+	box-shadow: 10px 10px 8px #000;
+	opacity: .6;
+	transition: all 1s ease;
+}
+video:hover {
+	box-shadow: 24px 24px 24px #000;
+	opacity: 1;
+	transform: scale(1.2) rotate(5deg) skew(-5deg);
+}
+ */
+
+#wrapper {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	perspective: 1000px;
+}
+
+#bg {
+	padding-left: 50px;
+	transform: rotate3d(.2, 1, 0, 30deg);
+}
+
+#gradient {
+	width: 854px;
+	height: 440px;
+	position: relative;
+	top: -488px;
+	z-index: 2;
+
+	background-image: -webkit-linear-gradient(
+			top,
+			rgba(255,255,255, .5),
+			rgba(255,255,255, 0)
+	);
+
+	background-image: -moz-linear-gradient(
+			top,
+			rgba(255,255,255, .5),
+			rgba(255,255,255, 0)
+	);
+
+	background-image: linear-gradient(
+	top,
+	rgba(255,255,255, .5),
+	rgba(255,255,255, 0)
+	);
+}

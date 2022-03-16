@@ -1,0 +1,33 @@
+    0% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.4);}
+				
+	30% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.8),
+				0px -8px 26px rgba(255, 255, 255, 0.6),
+				2px -20px 30px rgba(255, 255, 255, 0.4);}
+				
+	50% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.4),
+				-1px -4px 20px rgba(255, 255, 255, 0.2),
+				40px -35px 28px rgba(255, 255, 255, 0.3);}
+				
+	75% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.4),
+				-1px -4px 20px rgba(255, 255, 255, 0.2),
+				55px -35px 45px rgba(255, 255, 255, 0.1);}
+    
+    85% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.2),
+				-1px -4px 20px rgba(255, 255, 255, 0.1),
+				65px -35px 45px rgba(255, 255, 255, 0.1);}
+				
+	100% {text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+				0px -2px 0px rgba(0, 0, 0, 0.8),
+				1px 0px 6px rgba(255, 255, 255, 0.4),
+				-1px -4px 20px rgba(255, 255, 255, 0),
+				70px -35px 55px rgba(255, 255, 255, 0);}
