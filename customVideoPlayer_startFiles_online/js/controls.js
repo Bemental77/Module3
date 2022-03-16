@@ -37,6 +37,7 @@ function initializePlayer() {
     //Set up event listeners to detect when a control has been activated by the user
     playPauseButton.addEventListener('click', togglePlay, false);
     stopButton.addEventListener('click', stopVideo, false);
+    muteButton.addEventListener('click', toggleMute, false);
 
 }
 
@@ -80,6 +81,21 @@ function stopVideo() {
     }
 }
 
+
+function toggleMute() {
+
+    if (video.muted){
+
+        video.muted = false;
+        muteButton.className = 'mute';
+
+    }else{ //video is not muted k
+
+        video.muted = true;
+        muteButton.className = 'unmute';
+    }
+
+}
 
 
 
