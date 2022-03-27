@@ -17,6 +17,7 @@ function initializePlayer() {
     muteButton = document.querySelector('#mute');
     volumeSlider = document.querySelector('#volumeSlider');
     fullScreenButton = document.querySelector('#fullScreen');
+    thumbnail = document.querySelector('span.thumb')
 
     //time values
     currentTimeText = document.querySelector('#currentTime');
@@ -40,6 +41,29 @@ function initializePlayer() {
     muteButton.addEventListener('click', toggleMute, false);
     volumeSlider.addEventListener('input', setVolume, false);
     fullScreenButton.addEventListener('click', toggleFullScreen, false);
+    thumbnail.addEventListener('mouseenter', showThumb, false);
+    thumbnail.addEventListener('mouseleave', hideThumb, false);
+    thumbnail.addEventListener('mousemove', function (e){
+        //convert from mouse to time position
+        var mousePos = (MouseEvent.offsetX) * video.duration / progressBar.offsetWidth;
+
+        //find matching cue
+        var cuesList = video.textTracks[0].cues;
+        for (var i=0; i < cuesList.length; i++){
+            if(cuesList[i].startTime <= mousePos && cuesList[i].endTime > mousePos){
+                break;
+            }
+
+        };
+
+        //unravel the JPG url and fragment query
+        var url = cuesList[i].text[0];
+        thumbnail.style.backgroundImage = 'url('+cuesList[i].text[0]+')';
+        thumbnail.style.backgroundPosition = "center 100%";
+        thumbnail.style.left = e.offsetX - 10+'px';
+
+
+    }, false);
 
     //update the progress bar and current time as video plays
     video.addEventListener('timeupdate', updateProgress, false);
@@ -72,6 +96,19 @@ function initializePlayer() {
     }, false)
 
 }
+
+function showThumb() {
+    thumbnail.style.display = 'block';
+}
+
+function hideThumb() {
+    thumbnail.style.display = 'none';
+}
+
+
+
+
+
 
 function togglePlay() {
 
