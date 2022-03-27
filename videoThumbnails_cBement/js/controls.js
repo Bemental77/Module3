@@ -41,29 +41,36 @@ function initializePlayer() {
     muteButton.addEventListener('click', toggleMute, false);
     volumeSlider.addEventListener('input', setVolume, false);
     fullScreenButton.addEventListener('click', toggleFullScreen, false);
-    thumbnail.addEventListener('mouseenter', showThumb, false);
-    thumbnail.addEventListener('mouseleave', hideThumb, false);
-    thumbnail.addEventListener('mousemove', function (e){
+    progressBar.addEventListener('mouseenter', showThumb, false);
+    progressBar.addEventListener('mouseleave', hideThumb, false);
+    progressBar.addEventListener('mousemove', function (e) {
         //convert from mouse to time position
-        var mousePos = (MouseEvent.offsetX) * video.duration / progressBar.offsetWidth;
+        var mousePos = (e.offsetX) * video.duration / progressBar.offsetWidth;
+
+        if (mousePos < 0){
+            mousePos = 0;
+        }
 
         //find matching cue
         var cuesList = video.textTracks[0].cues;
-        for (var i=0; i < cuesList.length; i++){
-            if(cuesList[i].startTime <= mousePos && cuesList[i].endTime > mousePos){
+        for (var i = 0; i < cuesList.length; i++) {
+            if (cuesList[i].startTime <= mousePos && cuesList[i].endTime > mousePos) {
                 break;
             }
 
-        };
+        }
+
 
         //unravel the JPG url and fragment query
-        var url = cuesList[i].text[0];
-        thumbnail.style.backgroundImage = 'url('+cuesList[i].text[0]+')';
+        var url = cuesList[i].text;
+        thumbnail.style.backgroundImage = 'url(' + cuesList[i].text + ')';
         thumbnail.style.backgroundPosition = "center 100%";
-        thumbnail.style.left = e.offsetX - 10+'px';
+        thumbnail.style.left = e.offsetX - 45 + 'px';
 
 
-    }, false);
+    },false);
+
+
 
     //update the progress bar and current time as video plays
     video.addEventListener('timeupdate', updateProgress, false);
@@ -93,7 +100,7 @@ function initializePlayer() {
 
         $videoCover.fadeIn(3000);
 
-    }, false)
+    }, false);
 
 }
 
